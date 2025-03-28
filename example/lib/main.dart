@@ -374,17 +374,15 @@ class _MrtdHomePageState extends State<MrtdHomePage>
         mrtdData.isDBA = accessKey.PACE_REF_KEY_TAG == 0x01;
 
         if (isPace) {
-          _nfc.setIosAlertMessage("Initiating session with PACE...");
-          // Fix cứng giá trị vì ios không ddọc được efCardAccessData
-          final efCardAccessData = "1000203134300D060804007F0007020202020101300F060A04007F0007020203020202".parseHex(); //TODO: gía trị fix cứng
-
-          EfCardAccess efCardAccess = EfCardAccess.fromBytes(efCardAccessData);
-          //PACE session
-          await passport.startSessionPACE(accessKey, efCardAccess);
-        } else {
-          //BAC session
-          await passport.startSession(accessKey as DBAKey);
-        }
+       _nfc.setIosAlertMessage("Initiating session with PACE...");
+  
+       final efCardAccessData = "10 00 20 31 34 30 0d 06 08 04 00 7f 00 07 02 02 02 02 01 01 30 0f 06 0a 04 00 7f 00 07 02 02 03 02 02 02"
+         .replaceAll(' ', '')
+         .parseHex();
+  
+       EfCardAccess efCardAccess = EfCardAccess.fromBytes(efCardAccessData);
+       await passport.startSessionPACE(accessKey, efCardAccess);
+       }
 
         _nfc.setIosAlertMessage(formatProgressMsg("Reading EF.COM ...", 0));
         mrtdData.com = await passport.readEfCOM();
