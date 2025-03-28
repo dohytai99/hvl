@@ -4,7 +4,6 @@
 import 'dart:async';
 import 'dart:convert';
 
-import 'packageconvert/convert.dart';
 import 'package:asn1lib/asn1lib.dart';
 import 'package:dmrtd/dmrtd.dart';
 import 'package:dmrtd/extensions.dart';
