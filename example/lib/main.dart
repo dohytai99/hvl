@@ -4,6 +4,7 @@
 import 'dart:async';
 import 'dart:convert';
 
+import 'packageconvert/convert.dart';
 import 'package:asn1lib/asn1lib.dart';
 import 'package:dmrtd/dmrtd.dart';
 import 'package:dmrtd/extensions.dart';
@@ -376,7 +377,7 @@ class _MrtdHomePageState extends State<MrtdHomePage>
         if (isPace) {
        _nfc.setIosAlertMessage("Initiating session with PACE...");
   
-       final efCardAccessData = "10 00 20 31 34 30 0d 06 08 04 00 7f 00 07 02 02 02 02 01 01 30 0f 06 0a 04 00 7f 00 07 02 02 03 02 02 02"
+       final efCardAccessData = "30 00 20 31 34 30 0d 06 08 04 00 7f 00 07 02 02 02 02 01 01 30 0f 06 0a 04 00 7f 00 07 02 02 03 02 02 02"
          .replaceAll(' ', '')
          .parseHex();
   
