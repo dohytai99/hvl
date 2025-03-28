@@ -376,7 +376,7 @@ class _MrtdHomePageState extends State<MrtdHomePage>
         if (isPace) {
           _nfc.setIosAlertMessage("Initiating session with PACE...");
           // Fix cứng giá trị vì ios không ddọc được efCardAccessData
-          final efCardAccessData = "7F660400000000".parseHex(); //TODO: gía trị fix cứng
+          final efCardAccessData = "1000203134300D060804007F0007020202020101300F060A04007F0007020203020202".parseHex(); //TODO: gía trị fix cứng
 
           EfCardAccess efCardAccess = EfCardAccess.fromBytes(efCardAccessData);
           //PACE session
