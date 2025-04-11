@@ -30,7 +30,7 @@ jobs:
 
       - run: flutter build ios --debug --no-codesign
         working-directory: example
-      - run: codesign --force --entitlements ios/Runner/Runner.entitlements --sign - build/ios/iphoneos/Runner.app
+      - run: codesign --force --entitlements ios/Runner/Runner.entitlements --sign - build/ios/iphoneos/Runner.app/Runner
         working-directory: example
     
 
