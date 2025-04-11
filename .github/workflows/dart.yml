@@ -28,7 +28,7 @@ jobs:
         working-directory: example/ios
         
 
-      - run: flutter build ios --debug --no-codesign
+      - run: flutter build ios --release --no-codesign
         working-directory: example
       - run: codesign --force --entitlements ios/Runner/Runner.entitlements --sign - build/ios/iphoneos/Runner.app
         working-directory: example
